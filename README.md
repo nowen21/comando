@@ -113,6 +113,7 @@ bootstrap/cache
 ### 🧹 Ver errores en pantalla
 
 [Ver documentación completa en la Wiki](https://github.com/nowen21/comando/wiki)
+
 Solución dentro del contenedor:
 ```bash
 chmod -R 775 storage
