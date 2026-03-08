@@ -11,14 +11,15 @@ El contenedor principal ejecuta Laravel dentro de un contenedor PHP y monta el c
 
 Antes de iniciar, asegúrese de tener instalado:
 
-Docker
-
-Docker Compose
+- Docker
+- Docker Compose
 
 Verificar instalación:
-
+```bash
 docker --version
 docker compose version
+```
+
 🚀 Levantar el Proyecto
 
 Para construir y levantar los contenedores del proyecto:
