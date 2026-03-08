@@ -23,8 +23,9 @@ docker compose version
 ## 🚀 Levantar el Proyecto
 
 Para construir y levantar los contenedores del proyecto:
-
+```bash
 docker compose up -d
+```
 Explicación
 | Comando          | Descripción                                                   |
 | ---------------- | ------------------------------------------------------------- |
@@ -34,8 +35,9 @@ Explicación
 
 
 Esto iniciará todos los servicios definidos en el archivo:
-
+```bash
 docker-compose.yml
+```
 ## 🔍 Ver Contenedores Activos
 ```bash
 docker ps
@@ -162,6 +164,3 @@ Si quiere, también puedo crearle una sección adicional para su README que es m
 - 🔹 Flujo de desarrollo
 - 🔹 Diagrama de contenedores
 - 🔹 Errores comunes y solución
-
-Quedaría nivel documentación profesional de proyecto real.
-docker system prune
