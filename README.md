@@ -1,13 +1,13 @@
 # comando
 almacenar los comandos más utilizados en herramientas
 
-🐳 Docker - Guía de Uso del Proyecto
+# 🐳 Docker - Guía de Uso del Proyecto
 
 Este proyecto se ejecuta utilizando Docker y Docker Compose, lo que permite levantar el entorno completo de desarrollo de forma reproducible.
 
 El contenedor principal ejecuta Laravel dentro de un contenedor PHP y monta el código fuente desde el host.
 
-📦 Requisitos
+## 📦 Requisitos
 
 Antes de iniciar, asegúrese de tener instalado:
 
@@ -20,95 +20,106 @@ docker --version
 docker compose version
 ```
 
-🚀 Levantar el Proyecto
+## 🚀 Levantar el Proyecto
 
 Para construir y levantar los contenedores del proyecto:
 
 docker compose up -d
 Explicación
-Comando	Descripción
-docker compose	Ejecuta Docker Compose
-up	Crea y levanta los contenedores
--d	Ejecuta los contenedores en modo detached (segundo plano)
+| Comando          | Descripción                                                   |
+| ---------------- | ------------------------------------------------------------- |
+| `docker compose` | Ejecuta Docker Compose                                        |
+| `up`             | Crea y levanta los contenedores                               |
+| `-d`             | Ejecuta los contenedores en **modo detached (segundo plano)** |
+
 
 Esto iniciará todos los servicios definidos en el archivo:
 
 docker-compose.yml
-🔍 Ver Contenedores Activos
+## 🔍 Ver Contenedores Activos
+```bash
 docker ps
-
+```
 Muestra los contenedores que están corriendo.
 
 Para ver todos los contenedores (incluyendo detenidos):
-
+```bash
 docker ps -a
-📜 Ver Logs del Proyecto
+```
+## 📜 Ver Logs del Proyecto
 
 Para ver los logs de Laravel dentro del contenedor:
 
 docker exec -it tayana-siies-backend-main-app-1 tail -f storage/logs/laravel.log
 Explicación
-Comando	Descripción
-docker exec	Ejecuta un comando dentro de un contenedor
--it	Modo interactivo
-tail -f	Muestra el log en tiempo real
+| Comando       | Descripción                                |
+| ------------- | ------------------------------------------ |
+| `docker exec` | Ejecuta un comando dentro de un contenedor |
+| `-it`         | Modo interactivo                           |
+| `tail -f`     | Muestra el log en tiempo real              |
 
 Esto permite diagnosticar errores del backend Laravel.
 
-🖥️ Entrar al Contenedor
+## 🖥️ Entrar al Contenedor
 
 Para abrir una terminal dentro del contenedor:
-
+```bash
 docker exec -it tayana-siies-backend-main-app-1 sh
-
+```
 Ahora estarás dentro del contenedor:
-
+```bash
 /var/www/html
-
+```
 Desde allí puedes ejecutar comandos de Laravel.
 
 Ejemplo:
-
+```bash
 php artisan migrate
-🔧 Reiniciar Contenedores
+```
+## 🔧 Reiniciar Contenedores
 
 Si se requiere reiniciar los servicios:
-
+```bash
 docker compose restart
-🛑 Detener el Proyecto
+```
+## 🛑 Detener el Proyecto
 
 Para detener los contenedores:
-
+```bash
 docker compose down
+```
 
 Esto detiene y elimina los contenedores creados por Docker Compose.
 
-🔨 Reconstruir Contenedores
+## 🔨 Reconstruir Contenedores
 
 Si se realizan cambios en el Dockerfile:
-
+```bash
 docker compose up --build -d
-
+```
 Esto fuerza la reconstrucción de las imágenes.
 
-📁 Manejo de Permisos (Laravel)
+## 📁 Manejo de Permisos (Laravel)
 
 En algunos casos Laravel puede presentar errores de permisos en:
-
+```bash
 storage
 bootstrap/cache
-
+```
 Solución dentro del contenedor:
-
+```bash
 chmod -R 775 storage
 chmod -R 775 bootstrap/cache
-🧹 Limpiar Contenedores y Volúmenes
+```
+## 🧹 Limpiar Contenedores y Volúmenes
 
 Para eliminar contenedores, redes y volúmenes asociados:
-
+```bash
 docker compose down -v
-📊 Comandos Docker Más Utilizados
+```
+## 📊 Comandos Docker Más Utilizados
 Comando	Descripción
+```bash
 docker ps	Lista contenedores activos
 docker ps -a	Lista todos los contenedores
 docker images	Lista imágenes Docker
@@ -117,7 +128,8 @@ docker logs <container>	Ver logs del contenedor
 docker stop <container>	Detener contenedor
 docker rm <container>	Eliminar contenedor
 docker rmi <image>	Eliminar imagen
-🏗 Arquitectura del Entorno Docker
+```
+## 🏗 Arquitectura del Entorno Docker
 
 El entorno Docker del proyecto sigue esta estructura:
 
@@ -135,22 +147,19 @@ Container
 
 El código se monta mediante volúmenes, lo que permite modificar archivos en el host y ver los cambios dentro del contenedor.
 
-📌 Buenas Prácticas
+## 📌 Buenas Prácticas
 
-✔ Usar Docker para evitar diferencias de entorno
-✔ Ejecutar siempre el proyecto desde docker compose
-✔ Revisar logs de Laravel cuando ocurra un error
-✔ Mantener permisos correctos en storage y bootstrap/cache
+- ✔ Usar Docker para evitar diferencias de entorno
+- ✔ Ejecutar siempre el proyecto desde docker compose
+- ✔ Revisar logs de Laravel cuando ocurra un error
+- ✔ Mantener permisos correctos en storage y bootstrap/cache
 
 Si quiere, también puedo crearle una sección adicional para su README que es muy útil en proyectos Docker:
 
-🔹 Arquitectura del proyecto (Laravel + Docker + Base de datos)
-
-🔹 Flujo de desarrollo
-
-🔹 Diagrama de contenedores
-
-🔹 Errores comunes y solución
+- 🔹 Arquitectura del proyecto (Laravel + Docker + Base de datos)
+- 🔹 Flujo de desarrollo
+- 🔹 Diagrama de contenedores
+- 🔹 Errores comunes y solución
 
 Quedaría nivel documentación profesional de proyecto real.
 docker system prune
