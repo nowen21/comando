@@ -49,8 +49,9 @@ docker ps -a
 ## 📜 Ver Logs del Proyecto
 
 Para ver los logs de Laravel dentro del contenedor:
-
-docker exec -it tayana-siies-backend-main-app-1 tail -f storage/logs/laravel.log
+```bash
+docker exec -it <container> -f storage/logs/laravel.log
+```
 Explicación
 | Comando       | Descripción                                |
 | ------------- | ------------------------------------------ |
@@ -64,7 +65,7 @@ Esto permite diagnosticar errores del backend Laravel.
 
 Para abrir una terminal dentro del contenedor:
 ```bash
-docker exec -it tayana-siies-backend-main-app-1 sh
+docker exec -it <container> sh
 ```
 Ahora estarás dentro del contenedor:
 ```bash
@@ -132,7 +133,7 @@ docker rmi <image>	Eliminar imagen
 ## 🏗 Arquitectura del Entorno Docker
 
 El entorno Docker del proyecto sigue esta estructura:
-
+```bash
 Host (WSL / Windows)
         │
         │
@@ -144,6 +145,7 @@ Container
    ├── Laravel
    ├── Composer
    └── Código del proyecto
+```
 
 El código se monta mediante volúmenes, lo que permite modificar archivos en el host y ver los cambios dentro del contenedor.
 
