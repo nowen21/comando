@@ -1,4 +1,5 @@
-# comando
+# Comandos más usados en desarrollo
+
 almacenar los comandos más utilizados en herramientas
 
 # 🐳 Docker - Guía de Uso del Proyecto
