@@ -112,7 +112,11 @@ bootstrap/cache
 ```
 ### 🧹 Ver errores en pantalla
 
-[Ver documentación completa en la Wiki](https://github.com/nowen21/comando/wiki)
+### 🧹 Ver errores en pantalla
+
+<a href="https://github.com/nowen21/comando/wiki" target="_blank">
+📚 Ver documentación completa en la Wiki
+</a>
 
 Solución dentro del contenedor:
 ```bash
